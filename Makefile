@@ -1,6 +1,7 @@
 .PHONY: install run clean
 
 install:
+	pipenv install setuptools
 	pipenv run python setup.py install
 	pipenv install
 
