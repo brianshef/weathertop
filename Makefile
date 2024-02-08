@@ -1,16 +1,14 @@
-.PHONY: run clean
+.PHONY: install run clean
 
-VENV = venv
-PYTHON = $(VENV)/bin/python3
-PIP = $(VENV)/bin/pip
+install:
+	pipenv run python setup.py install
+	pipenv install
 
-run: $(VENV)/bin/activate
-	$(PYTHON) main.py
-
-$(VENV)/bin/activate: requirements.txt
-	python3 -m venv $(VENV)
-	$(PIP) install -r requirements.txt
+run: 
+	pipenv run weathertop
 
 clean:
+	pipenv --rm
+	rm -rf weathertop.egg-info
 	rm -rf __pycache_
-	rm -rf $(VENV)
+	rm -rf venv
