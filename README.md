@@ -39,8 +39,10 @@ pipenv install
 
 ## Running locally
 
+During local development, it is most useful and safest to completely clean and re-recreate the
+entire virtual Python environment before re-running.
 ```
-make run
+make clean install run
 ```
 
 #### Troubleshooting Running
